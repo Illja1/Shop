@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+<!DOCTYPE html>
+    {% include "inc/_nav.html"%}
+{% block cat%}
+    <section class="shop container">
+      <div class="shop-content">
+        {% for item in objects_list %}
+        <div class="product-box">
+          {% if item.photo %}
+            <img class="product-img" src="{{item.photo.url }}" alt="">
+          {% endif %}
+              <h2 class="product-title">{{ item.name }}</h2>
+              <span class='price'>${{ item.price }}<i class="bx bx-shopping-bag add-cart"></i></span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+{% endblock%}

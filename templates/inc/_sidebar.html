@@ -1,0 +1,14 @@
+{% load static %}
+<div class="row">
+  <div class="col-md-2">
+    <div class="mt-2">
+      <h2 class="section-title">Shop Product</h2>
+{% for item in categories%}
+<div class="mt-2">
+  <ul class="list-group">
+      <li class="list-group-item text"><a href="{% url 'category' item.pk %}">{{item.title}}</a></li>
+  </ul>
+</div>
+{% endfor%}
+  </div>
+</div>
